@@ -1,6 +1,8 @@
 <?php $config = include 'config.php'; ?>
 <html>
     <head>
+        <meta charset="utf-8">
+        
         <title><?php echo $config['name'] ?></title>
         <link rel="stylesheet" href="style.css">
 
