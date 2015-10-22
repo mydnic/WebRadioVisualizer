@@ -1,4 +1,5 @@
 <?php
+
 return [
     'name'         => 'My Radio',
     'description'  => 'Just click play and enjoy.',
