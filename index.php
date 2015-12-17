@@ -22,7 +22,8 @@
             <script>var radioName = "<?php echo $config['name'] ?>";</script>
             <script>var host = "<?php echo $config['icecast_url'] ?>";</script>
             <script src="app.js"></script>
-        
+            <script src="mediatag.js"></script>        
+            
             <canvas id='visualizer'></canvas>
             
             <div id='foreground' onclick="GetInfo()">
@@ -32,7 +33,7 @@
                 
                 <input onclick="setVol(this.value)" min="0" max="1" step="0.01" id="volume-bar" type="range"/>
                 <svg viewBox="0 0 100 100" onclick='start()' class='play-btn' id='start'><polygon points="0,0 100,50 0,100" /></svg>
-                <svg viewBox="0 0 100 100" onclick='pause()' class='pause-btn' id='pause'><rect height="100" width="100" /></rect>
+                <svg viewBox="0 0 100 100" onclick='pause()' class='pause-btn' id='pause'><rect height="100" width="100" /></rect></svg>
                 
                 <div id="current-volume"></div>
             </div>

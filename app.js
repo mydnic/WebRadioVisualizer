@@ -44,6 +44,7 @@ var fps;
 var lastFrame = new Date();
 var lastFrameFrame = lastFrame;
 var title;
+var jsmediatags = window.jsmediatags;
 
 function getUrlVars() {
     var vars = {};
@@ -389,14 +390,16 @@ function toggleFX(string) {
 
 (function worker() {
     $.ajax({
-        url: 'fetcher.php?host='+host,
+        url: host + 'status-json.xsl',
         success: function(data) {
-            title = data;
-            document.title = data;
+            artist = data.icestats.source.artist;
+            title = artist + ' - ' + data.icestats.source.title;
+            document.title = title;
         },
         complete: function() {
             // Schedule the next request when the current one's complete
             setTimeout(worker, 3000);
         }
     });
+
 })();
