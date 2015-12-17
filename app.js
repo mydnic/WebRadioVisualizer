@@ -44,7 +44,6 @@ var fps;
 var lastFrame = new Date();
 var lastFrameFrame = lastFrame;
 var title;
-var jsmediatags = window.jsmediatags;
 
 function getUrlVars() {
     var vars = {};
