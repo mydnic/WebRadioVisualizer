@@ -68,7 +68,7 @@
             <?php endif ?>
         </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script>var radioName = "<?php echo $config['name'] ?>";</script>
         <script>var host = "<?php echo $config['icecast_url'] ?>";</script>
         <script src="app.js"></script>
