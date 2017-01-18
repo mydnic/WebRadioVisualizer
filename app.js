@@ -44,6 +44,8 @@ var fps;
 var lastFrame = new Date();
 var lastFrameFrame = lastFrame;
 var title;
+var radioName = 'Cool Radio';
+var host = "https://stream.mydnic.be";
 
 function getUrlVars() {
     var vars = {};
@@ -132,7 +134,7 @@ function NewBGColour() {
             "fill": "#" + bgColour,
             "stroke": "#" + fgColour
         });
-        
+
         visualizerElement.setAttribute("style", "background:#" + bgColour);
     }
     else if (parseInt(input) !== "NaN" && input.legnth < 4) {
@@ -259,7 +261,7 @@ function anim() {
                 canvasCtx.fillRect(i * (barWidth + barSpacing), HEIGHT/2 - h/(barHeight * 2), barWidth, h/barHeight);
             }
         }
-        
+
         if (increment === true) {
             pulse++;
         } else {
@@ -273,7 +275,7 @@ function anim() {
         }
         mean = 0;
     }
-    
+
     var total = Math.floor(audioTag.currentTime);
     var seconds = Math.floor(total % 60).toString();
     var minutes = Math.floor(total/60 % 60).toString();
@@ -356,7 +358,7 @@ function setVol(value) {
 $(".filter-toggle").click(function() {
     firstChild = this.children[0];
     secondChild = this.children[1];
-  
+
     if(firstChild.hasAttribute("style")){
         firstChild.removeAttribute("style");
         secondChild.setAttribute("style", "opacity:0.2;");
@@ -389,7 +391,7 @@ function toggleFX(string) {
 
 (function worker() {
     $.ajax({
-        url: host + 'status-json.xsl',
+        url: host + '/status-json.xsl',
         success: function(data) {
             artist = data.icestats.source.artist;
             title = artist + ' - ' + data.icestats.source.title;
